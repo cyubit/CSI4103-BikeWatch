@@ -1,4 +1,5 @@
 import string
+import json
 
 # Function parses Ottawa polygon data
 def parseData():
@@ -11,7 +12,7 @@ def parseData():
     '''
 
     # Variable regionData is a dictionary with region names (given by variable 
-    # regionName) as keys and an 2D list of longitude and latitude coordinates 
+    # regionName) as keys and a 2D list of longitude and latitude coordinates 
     # as dimensions for each sublist
 
     regionData = dict()
@@ -24,6 +25,8 @@ def parseData():
         # Flag used to indicate progression point of single longitudinal coordinate
         longitudeReached = False
         for line in file:
+            if len(regionData.values()) > 2:
+                break
             if not line:
                 break
             # Extracts region name
@@ -53,9 +56,11 @@ def parseData():
             elif (longitudeReached):
                 line = line.strip()
                 latitude = float(line)
-                regionData[regionName].append([longitude, latitude])
+                coords = { "lng": longitude, "lat": latitude }
+                regionData[regionName].append(coords)
                 longitudeReached = False
 
-    return regionData
+    with open("parsedData.json", "w") as outfile:
+        json_object = json.dump(regionData, outfile)
 
-print(parseData())
+parseData()
