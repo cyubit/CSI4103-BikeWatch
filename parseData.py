@@ -4,7 +4,7 @@ import json
 # Function parses Ottawa polygon data
 def parseData():
     '''
-    TYPE-CONTRACT: (file) -> dict 
+    TYPE-CONTRACT: (file) -> dict
     DESCRIPTION: Parses raw_ottawa_polygons.json file to extract each the region name and
     the longitude and latitude coordinates defining its regional boundary and
     adds them to a dictionary
