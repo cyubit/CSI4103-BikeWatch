@@ -1,4 +1,5 @@
 import string
+import json
 
 # Function parses Ottawa polygon data and outputs dictionary of region names and their ONS IDs
 
@@ -42,6 +43,5 @@ def parseData():
             elif (line.find("Name_FR") != -1):
                 continue
 
-    return regionData
-
-print(parseData())
+    with open("parsedONSID.json", "w") as outfile:
+        json_object = json.dump(regionData, outfile)
