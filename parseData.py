@@ -25,8 +25,6 @@ def parseData():
         # Flag used to indicate progression point of single longitudinal coordinate
         longitudeReached = False
         for line in file:
-            if len(regionData.values()) > 2:
-                break
             if not line:
                 break
             # Extracts region name
@@ -48,7 +46,7 @@ def parseData():
                     if char in punc:
                         line = line.replace(char, '')
                 line = line.strip()
-                longitude = float(line)
+                longitude = str(line)
                 # Flag keeps track of longitudinal coordinate position, which is useful because
                 # latitude coordinate follows immediately afterwards
                 longitudeReached = True
