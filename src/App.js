@@ -10,10 +10,10 @@ class App extends Component {
           <Grid item xs={12}>
             <h1>Bike Watch</h1>
           </Grid>
-          <Grid item xs={12} style={{position: 'relative', height: '70vh'}}>
+          <Grid item xs={12} md={8} style={{position: 'relative', height: '90vh'}}>
             <MapContainer />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={8} md={4}>
             <h1>Why Watch</h1>
           </Grid>
         </Grid>
