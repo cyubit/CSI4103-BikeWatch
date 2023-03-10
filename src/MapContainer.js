@@ -56,7 +56,7 @@ export class MapContainer extends Component {
     ];
     return(
       <Map google={this.props.google}
-        style={{width: '100%', height: '100%', position: 'relative'}}
+        // style={{width: '90%', height: '70%', position: 'relative', margin: '1%'}}
         className={'map'}
         zoom={14}
         initialCenter={{
