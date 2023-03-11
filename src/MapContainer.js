@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, Polygon, InfoWindow } from 'google-maps-react';
-import data from './master.json';
+// import data from './master.json';
+import data from './master_unkeyed.json';
+
 
 export class MapContainer extends Component {
   render() {
@@ -56,6 +58,7 @@ export class MapContainer extends Component {
       { lng: -75.760331324577194, lat: 45.268659545111603 },
     ];
     const locations = JSON.parse(JSON.stringify(data));
+
     return (
       <Map google={this.props.google}
         className={'map'}
@@ -71,7 +74,7 @@ export class MapContainer extends Component {
           strokeWeight={2}
           fillColor="#0000FF"
           fillOpacity={0.35} />
-        {Object.entries(locations).forEach(([key, item]) => (
+        {/* {Object.entries(locations).forEach(([key, item]) => (
 
           <Polygon
             paths={item.coordinates}
@@ -87,7 +90,20 @@ export class MapContainer extends Component {
             </InfoWindow>
           </Polygon>
 
-          ))}
+          ))} */}
+          {
+            locations.map((item) => (
+              <Polygon
+                paths={item.coordinates}
+                strokeColor="#0000FF"
+                strokeOpacity={0.8}
+                strokeWeight={2}
+                fillColor="#0000FF"
+                fillOpacity={0.35}>
+              </Polygon>
+            ))
+          }
+
       </Map>
 
     );
