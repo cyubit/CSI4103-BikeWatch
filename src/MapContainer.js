@@ -15,34 +15,36 @@ const Name = ({ name, a2017, a2018, a2019, a2020, a2021 }) => (
           <h2>{name}</h2>
 
         </Grid>
-        <Grid item xs={4} >
-          <Grid container spacing={2} style={{ justifyContent: 'center'}}>
-            <Grid item xs={4} >
-              <Paper elevation={5} style={{ textAlign: 'center' }}>
-                Thefts in 2017: <b>{a2017}</b>
-              </Paper>
+        <Grid item xs={12} md={4}>
+          <Paper elevation={3} style={{padding:"5px"}}>
+            <Grid container spacing={2} style={{ justifyContent: 'center' }}>
+              <Grid item xs={4} >
+                <Paper elevation={5} style={{ textAlign: 'center' }}>
+                  Thefts in 2017: <b>{a2017}</b>
+                </Paper>
+              </Grid>
+              <Grid item xs={4} >
+                <Paper elevation={5} style={{ textAlign: 'center' }}>
+                  Thefts in 2018: <b>{a2018}</b>
+                </Paper>
+              </Grid>
+              <Grid item xs={4} >
+                <Paper elevation={5} style={{ textAlign: 'center' }}>
+                  Thefts in 2019: <b>{a2019}</b>
+                </Paper>
+              </Grid>
+              <Grid item xs={4} >
+                <Paper elevation={5} style={{ textAlign: 'center' }}>
+                  Thefts in 2020: <b>{a2020}</b>
+                </Paper>
+              </Grid>
+              <Grid item xs={4} >
+                <Paper elevation={5} style={{ textAlign: 'center' }}>
+                  Thefts in 2021: <b>{a2021}</b>
+                </Paper>
+              </Grid>
             </Grid>
-            <Grid item xs={4} >
-              <Paper elevation={5} style={{ textAlign: 'center' }}>
-                Thefts in 2018: <b>{a2018}</b>
-              </Paper>
-            </Grid>
-            <Grid item xs={4} >
-              <Paper elevation={5} style={{ textAlign: 'center' }}>
-                Thefts in 2019: <b>{a2019}</b>
-              </Paper>
-            </Grid>
-            <Grid item xs={4} >
-              <Paper elevation={5} style={{ textAlign: 'center' }}>
-                Thefts in 2020: <b>{a2020}</b>
-              </Paper>
-            </Grid>
-            <Grid item xs={4} >
-              <Paper elevation={5} style={{ textAlign: 'center' }}>
-                Thefts in 2021: <b>{a2021}</b>
-              </Paper>
-            </Grid>
-          </Grid>
+          </Paper>
         </Grid>
       </Grid>) : null}
 
