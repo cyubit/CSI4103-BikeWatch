@@ -55,7 +55,7 @@ export class MapContainer extends Component {
   constructor(props) {
     super();
     this.state = {
-      name: "",
+      name: "Click on a district to see the bike theft statistics",
       2017: "",
       2018: "",
       2019: "",
@@ -72,6 +72,14 @@ export class MapContainer extends Component {
     this.setState({ 2020: a2020 });
     this.setState({ 2021: a2021 });
   }
+  default = () => {
+    this.setState({ name: "Click on a district to see the bike theft statistics" });
+    this.setState({ 2017: "" });
+    this.setState({ 2018: "" });
+    this.setState({ 2019: "" });
+    this.setState({ 2020: "" });
+    this.setState({ 2021: "" });
+  }
   render() {
 
     const locations = JSON.parse(JSON.stringify(data));
@@ -85,7 +93,8 @@ export class MapContainer extends Component {
           initialCenter={{
             lat: 45.4215,
             lng: -75.6972
-          }}>
+          }}
+          onClick = {() => this.default()}>
           {
             locations.map((item) => (
               <Polygon
