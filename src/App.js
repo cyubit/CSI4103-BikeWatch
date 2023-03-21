@@ -4,7 +4,6 @@ import MapContainer from './MapContainer.js';
 import Header from './Header.js';
 import Grid from '@mui/material/Grid';
 import './App.css';
-import Disqus from 'disqus-react';
 import DisqusBoard from './DisqusBoard.js';
 
 class App extends Component {

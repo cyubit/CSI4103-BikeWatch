@@ -12,7 +12,7 @@ export default class DisqusBoard extends Component {
 
     return (
       <div className="article-container">
-
+        <h1>My super awesome article</h1>
         <Disqus.DiscussionEmbed
           shortname={disqusShortname}
           config={disqusConfig}
