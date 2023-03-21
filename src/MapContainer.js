@@ -67,6 +67,7 @@ export class MapContainer extends Component {
       2019: "",
       2020: "",
       2021: "",
+      colours: []
     }
   }
   setName = (nameValue, a2017, a2018, a2019, a2020, a2021) => {
@@ -86,16 +87,15 @@ export class MapContainer extends Component {
     this.setState({ 2020: "" });
     this.setState({ 2021: "" });
   }
-  colour = (a2017, a2018, a2019, a2020, a2021) =>{
-    let sum = a2017 + a2018 + a2019 + a2020 + a2021
+  colour = (sum) =>{
     if(sum > 500){
       return ("#FF0000")
     } else if (sum > 400) {
-      return ("#ff6249")
+      return ("#FF6249")
     } else if (sum >250){
-      return ("#ff6249")
+      return ("#FF6249")
     } else if(sum> 100){
-      return ("ff9933")
+      return ("#FF9933")
     } else if (sum > 50){
       return("#FFFF00")
     } else if(sum > 25){
@@ -103,6 +103,11 @@ export class MapContainer extends Component {
     } else{
       return("#00FF00")
     }
+  }
+  componentDidMount(){
+    const locations = JSON.parse(JSON.stringify(data));
+    const temp = locations.map ((item)=>this.colour(item["2017"]+item["2018"] + item["2019"] + item["2020"] + item["2021"]))
+    this.setState({colours: temp})
   }
   render() {
 
@@ -120,17 +125,22 @@ export class MapContainer extends Component {
           }}
           onClick = {() => this.default()}>
           {
-            locations.map((item) => (
-              <Polygon
-                paths={item.coordinates}
-                strokeColor="#0000FF"
-                strokeOpacity={0.8}
-                strokeWeight={2}
-                fillColor={this.colour(item["2017"], item["2018"], item["2019"], item["2020"], item["2021"])}
-                fillOpacity={0.35}
-                onClick={() => this.setName(item.Name, item["2017"], item["2018"], item["2019"], item["2020"], item["2021"])}>
-              </Polygon>
-            ))
+            locations.map((item, index) => 
+            {
+                if (item.Name === 'Centretown'){
+                console.log(item.coordinates, "aa")
+              } 
+              return(
+                <Polygon
+                  paths={item.coordinates}
+                  strokeColor="#0000FF"
+                  strokeOpacity={0.8}
+                  strokeWeight={2}
+                  fillColor={this.state.colours[index]}
+                  fillOpacity={0.35}
+                  onClick={() => this.setName(item.Name, item["2017"], item["2018"], item["2019"], item["2020"], item["2021"])}>
+                </Polygon>
+              )})
           }
         </Map>
       </div>
