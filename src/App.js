@@ -4,6 +4,8 @@ import MapContainer from './MapContainer.js';
 import Header from './Header.js';
 import Grid from '@mui/material/Grid';
 import './App.css';
+import Disqus from 'disqus-react';
+import DisqusBoard from './DisqusBoard.js';
 
 class App extends Component {
   render() {
@@ -17,17 +19,14 @@ class App extends Component {
           <Grid item xs={11} lg={11}  style={{position: 'sticky', height: '80vh'}}>
             <MapContainer />
           </Grid>
-          {/* <Grid item xs={11} lg={11}>
+          <Grid item xs={11} lg={11}>
             <h1>Hidden Text :P</h1>
           </Grid>
-          <Grid item xs={8} lg={4}>
-            <h1>EAT MY HALFBAGLEGo Here!</h1>
-            <h1>Posts Go Here!</h1>
-            <h1>Posts Go Here!</h1>
-            <h1>Posts Go Here!</h1>
-            <h1>Posts Go Here!</h1>
-          </Grid> */}
+          <Grid item xs={8} lg={11}>
+            <DisqusBoard/>
+          </Grid>
         </Grid>
+        
       </div>
     );
   }
