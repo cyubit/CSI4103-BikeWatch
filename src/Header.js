@@ -34,10 +34,11 @@ const Header = () => {
             </Grid>
             <Modal open={open} onClose={handleClose}>
                 <Box sx={style}>
-                    <p>Bike Watch allows users to report bike thefts as well as view the locations and amounts of bike thefts in the Ottawa Area.</p>
-                    <p> Each area (highlighted in blue) on the map covers a neighbourhood as designated by ONS Ottawa. </p>
-                    <p>Hover over one to see police data for that area. Click on the "Report Theft" button to report a theft (User reporting is currently in development, but will be available soon). </p>
-                    <p>Click anywhere off of this box to return to the app.</p>
+                    <p>- Bike Watch allows users to report bike thefts as well as view the locations and amounts of bike thefts in the Ottawa Area.</p>
+                    <p>- Each area on the map covers a neighbourhood as designated by ONS Ottawa. </p>
+                    <p>- The colour of the areas changes depending on the amount of thefts in neighbourhood.</p>
+                    <p>- The closer the colour is to red, the more thefts have been reported in that area.</p>
+                    <p>- Click anywhere off of this box to return to the app.</p>
                 </Box>
             </Modal>
         </div>
