@@ -24,12 +24,12 @@ const Header = () => {
 
     return (
         <div className='Header'>
-            <Grid container spacing={2} justifyContent='space-between' alignItems="center" style={{ marginLeft: '10px' }} >
-                <Grid item xs={3}>
+            <Grid container spacing={2} justifyContent='space-between' alignItems="center" style={{ marginLeft: '1%' }} >
+                <Grid item xs={4}>
                     <h1>Bike Watch</h1>
                 </Grid>
-                <Grid item xs={1}>
-                    <img src={helpIcon} alt="Help" style={{ width: "50px" }} onClick={handleOpen} />
+                <Grid item xs={2}>
+                    <img src={helpIcon} alt="Help" style={{ width: "50px", cursor:'pointer' }} onClick={handleOpen} />
                 </Grid>
             </Grid>
             <Modal open={open} onClose={handleClose}>

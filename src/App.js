@@ -9,15 +9,22 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <Grid container spacing={{xs: 2, md: 3}} style={{justifyContent:'center'}}>
+        <Grid container spacing={{xs: 1, md: 3}} style={{justifyContent:'center', margin:'20px'}}>
           <Grid item xs={12}>
             <Header/>
           </Grid>
-          {/*Change to lg={12} to lg={8} when we implement the posts component */}
-          <Grid item xs={11} lg={11}  style={{position: 'relative', height: '80vh'}}>
+          {/*Change to xs={12} to lg={8} when we implement the posts component */}
+          <Grid item xs={11} lg={11}  style={{position: 'sticky', height: '80vh'}}>
             <MapContainer />
           </Grid>
-          {/* <Grid item xs={8} lg={8}>
+          {/* <Grid item xs={11} lg={11}>
+            <h1>Hidden Text :P</h1>
+          </Grid>
+          <Grid item xs={8} lg={4}>
+            <h1>EAT MY HALFBAGLEGo Here!</h1>
+            <h1>Posts Go Here!</h1>
+            <h1>Posts Go Here!</h1>
+            <h1>Posts Go Here!</h1>
             <h1>Posts Go Here!</h1>
           </Grid> */}
         </Grid>
