@@ -9,7 +9,7 @@ const Name = ({ name, a2017, a2018, a2019, a2020, a2021 }) => (
 
   <div>
 
-    {name ?
+    {name !== "Click on a district to see the bike theft statistics" ?
       (<Paper elevation={3} style={{padding:"5px"}}><Grid container spacing={1} style={{ justifyContent: 'center', color: "#124562" }}>
         <Grid item xs={12} md={4}>
           <h2>{name}</h2>
@@ -46,7 +46,13 @@ const Name = ({ name, a2017, a2018, a2019, a2020, a2021 }) => (
             </Grid>
           </Paper>
         </Grid>
-      </Grid></Paper>) : null}
+      </Grid></Paper>) : 
+      <Paper elevation={3} style={{padding:"5px"}}><Grid container spacing={1} style={{ justifyContent: 'center', color: "#124562" }}>
+      <Grid item xs={12} md={4}>
+        <h2>{name}</h2>
+      </Grid>
+      </Grid>
+      </Paper>}
 
   </div>
 );
