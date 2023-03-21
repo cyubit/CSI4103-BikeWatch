@@ -10,7 +10,7 @@ const style = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 400,
+    width: "60%",
     bgcolor: 'background.paper',
     border: '2px solid #000',
     boxShadow: 24,
@@ -34,10 +34,10 @@ const Header = () => {
             </Grid>
             <Modal open={open} onClose={handleClose}>
                 <Box sx={style}>
-                    <p>- Bike Watch allows users to report bike thefts as well as view the locations and amounts of bike thefts in the Ottawa Area.</p>
+                    <p>- Bike Watch allows users to  <b>view the locations and amounts of bike thefts</b> in the Ottawa Area.</p>
                     <p>- Each area on the map covers a neighbourhood as designated by ONS Ottawa. </p>
-                    <p>- The colour of the areas changes depending on the amount of thefts in neighbourhood.</p>
-                    <p>- The closer the colour is to red, the more thefts have been reported in that area.</p>
+                    <p>- The <b>colour of the areas</b> changes depending on the amount of thefts in neighbourhood.</p>
+                    <p>- The <b>closer the colour is to red</b>, the more thefts have been reported in that area.</p>
                     <p>- Click anywhere off of this box to return to the app.</p>
                 </Box>
             </Modal>
