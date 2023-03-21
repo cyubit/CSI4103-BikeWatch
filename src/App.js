@@ -11,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <Grid container spacing={{xs: 1, md: 3}} style={{justifyContent:'center', margin:'20px'}}>
+        <Grid container spacing={{xs: 1, md: 3}} style={{justifyContent:'center'}}>
           <Grid item xs={12}>
             <Header/>
           </Grid>
