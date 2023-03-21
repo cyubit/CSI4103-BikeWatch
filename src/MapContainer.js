@@ -80,6 +80,24 @@ export class MapContainer extends Component {
     this.setState({ 2020: "" });
     this.setState({ 2021: "" });
   }
+  colour = (a2017, a2018, a2019, a2020, a2021) =>{
+    let sum = a2017 + a2018 + a2019 + a2020 + a2021
+    if(sum > 500){
+      return ("#FF0000")
+    } else if (sum > 400) {
+      return ("#ff6249")
+    } else if (sum >250){
+      return ("#ff6249")
+    } else if(sum> 100){
+      return ("ff9933")
+    } else if (sum > 50){
+      return("#FFFF00")
+    } else if(sum > 25){
+      return("#ADFF2F")
+    } else{
+      return("#00FF00")
+    }
+  }
   render() {
 
     const locations = JSON.parse(JSON.stringify(data));
@@ -102,7 +120,7 @@ export class MapContainer extends Component {
                 strokeColor="#0000FF"
                 strokeOpacity={0.8}
                 strokeWeight={2}
-                fillColor="#0000FF"
+                fillColor={this.colour(item["2017"], item["2018"], item["2019"], item["2020"], item["2021"])}
                 fillOpacity={0.35}
                 onClick={() => this.setName(item.Name, item["2017"], item["2018"], item["2019"], item["2020"], item["2021"])}>
               </Polygon>
