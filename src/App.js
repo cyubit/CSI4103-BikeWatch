@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import MapContainer from './MapContainer.js';
 import Header from './Header.js';
 import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
 import './App.css';
 import DisqusBoard from './DisqusBoard.js';
 
@@ -10,22 +11,38 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <Grid container spacing={{xs: 1, md: 3}} style={{justifyContent:'center'}}>
+        <Grid container spacing={{ xs: 1, md: 3 }} style={{ justifyContent: 'center' }}>
           <Grid item xs={12}>
-            <Header/>
+            <Header />
           </Grid>
           {/*Change to xs={12} to lg={8} when we implement the posts component */}
-          <Grid item xs={11} lg={11}  style={{position: 'sticky', height: '80vh'}}>
-            <MapContainer />
-          </Grid>
-          <Grid item xs={11} lg={11}>
-            <h1>Hidden Text :P</h1>
-          </Grid>
-          <Grid item xs={8} lg={11}>
-            <DisqusBoard/>
+
+          {/* <Grid item xs={11} lg={10} style={{ position: 'sticky', height: '90vh' }}>
+            <Box sx={{ flexGrow: 1, backgroundColor: '##f2efeb' }}>
+              <MapContainer />
+            </Box>
+          </Grid> */}
+          <Grid item xs={11} lg={11} style={{ position: 'relative', height: '80vh' }}>
+            <Box sx={{ flexGrow: 0, backgroundColor: '#f2efeb', borderRadius: '30px', padding: '20px' }}>
+              <Grid container spacing={{ xs: 3 }} style={{ justifyContent: 'center' }}>
+                <Grid item xs={12} lg={12}>
+                  <MapContainer style={{ width: '95%' }} />
+                </Grid>
+                <Grid item xs={12} lg={12}>
+                  <Box sx={{ width: '100%', height: '80vh' }} />
+                </Grid>
+              </Grid>
+            </Box>
+
+
+
+
+            <Grid item xs={8} lg={11}>
+              <DisqusBoard />
+            </Grid>
           </Grid>
         </Grid>
-        
+
       </div>
     );
   }

@@ -1,6 +1,7 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
 import helpIcon from './Help-icon.png';
+import logo from './BikeWatch-Logo.png';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 
@@ -24,11 +25,11 @@ const Header = () => {
 
     return (
         <div className='Header'>
-            <Grid container spacing={2} justifyContent='space-between' alignItems="center" style={{ marginLeft: '1%' }} >
-                <Grid item xs={4}>
-                    <h1>Bike Watch</h1>
+            <Grid container spacing={2} justifyContent='space-evenly' alignItems="center" style={{ marginLeft: '1%', paddingTop:'10px' }} >
+                <Grid item xs={6}>
+                <img src={logo} alt="BikeWatch Logo" style={{ width: "100px"}} onClick={handleOpen} />
                 </Grid>
-                <Grid item xs={2}>
+                <Grid item xs={1}>
                     <img src={helpIcon} alt="Help" style={{ width: "50px", cursor:'pointer' }} onClick={handleOpen} />
                 </Grid>
             </Grid>
