@@ -5,7 +5,12 @@ import MouseTooltip from 'react-sticky-mouse-tooltip';
 
 // import data from './master.json';
 import data from './master_unkeyed.json';
-
+const tooltipStyle = {
+  color: "black",
+  backgroundColor: "#fffffff5",
+  padding: "5px",
+  opacity: 0.8
+}
 const Name = ({ name, a2017, a2018, a2019, a2020, a2021 }) => (
 
   <div>
@@ -163,6 +168,7 @@ export class MapContainer extends Component {
         </Map>
         <MouseTooltip
           visible={this.state.isMouseTooltipVisible}
+          style = {tooltipStyle}
           offsetX={15}
           offsetY={10}
         >
