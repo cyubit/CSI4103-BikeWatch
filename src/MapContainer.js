@@ -82,7 +82,6 @@ export class MapContainer extends Component {
     }
   }
   setName = (nameValue, a2017, a2018, a2019, a2020, a2021) => {
-    console.log(a2017)
     this.setState({ name: nameValue });
     this.setState({ 2017: a2017 });
     this.setState({ 2018: a2018 });
