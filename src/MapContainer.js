@@ -7,7 +7,7 @@ import MouseTooltip from 'react-sticky-mouse-tooltip';
 import data from './master_unkeyed.json';
 const tooltipStyle = {
   color: "black",
-  backgroundColor: "#fffffff5",
+  backgroundColor: "#f2efeb",
   padding: "5px",
   opacity: 0.8
 }
@@ -114,11 +114,6 @@ export class MapContainer extends Component {
     } else {
       return ("#00FF00")
     }
-  }
-
-  toggleMouseTooltip = (hName) => {
-    this.setState(prevState => ({ isMouseTooltipVisible: !prevState.isMouseTooltipVisible }));
-    this.setState({hoverName: hName})
   }
 
   componentDidMount() {
