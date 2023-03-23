@@ -25,27 +25,27 @@ const Name = ({ name, a2017, a2018, a2019, a2020, a2021 }) => (
 
 
 
-          <Grid item xs={1} >
+          <Grid item xs={"auto"} >
 
             <h4><b>{a2017}</b> thefts in 2017 </h4>
 
           </Grid>
-          <Grid item xs={1} >
+          <Grid item xs={"auto"} >
 
             <h4><b>{a2018}</b> thefts in 2018 </h4>
 
           </Grid>
-          <Grid item xs={1} >
+          <Grid item xs={"auto"} >
 
           <h4><b>{a2019}</b> thefts in 2019 </h4>
 
           </Grid>
-          <Grid item xs={1} >
+          <Grid item xs={"auto"} >
 
           <h4><b>{a2020}</b> thefts in 2020 </h4>
 
           </Grid>
-          <Grid item xs={1} >
+          <Grid item xs={"auto"} >
 
           <h4><b>{a2021}</b> thefts in 2021 </h4>
 
