@@ -13,7 +13,8 @@ const tooltipStyle = {
   padding: "5px",
   opacity: 0.8
 }
-const Name = ({ name, a2017, a2018, a2019, a2020, a2021 }) => (
+const Name = ({ name, a2017, a2018, a2019, a2020, a2021, polyColour }) => (
+  console.log(polyColour),
 
   <div>
 
@@ -27,7 +28,7 @@ const Name = ({ name, a2017, a2018, a2019, a2020, a2021 }) => (
 
           <Grid item>
 
-            <BarChart props={[a2017,a2018,a2019,a2020,a2021]}/>
+            <BarChart yearlyThefts={[a2017,a2018,a2019,a2020,a2021]} colour={polyColour} />
 
           </Grid>
 
@@ -86,16 +87,18 @@ export class MapContainer extends Component {
       2019: "",
       2020: "",
       2021: "",
+      polyColour: "",
       colours: []
     }
   }
-  setName = (nameValue, a2017, a2018, a2019, a2020, a2021) => {
+  setName = (nameValue, a2017, a2018, a2019, a2020, a2021, pColour) => {
     this.setState({ name: nameValue });
     this.setState({ 2017: a2017 });
     this.setState({ 2018: a2018 });
     this.setState({ 2019: a2019 });
     this.setState({ 2020: a2020 });
     this.setState({ 2021: a2021 });
+    this.setState({polyColour: pColour});
   }
   default = () => {
     this.setState({ name: "Click on a district to see the bike theft statistics" });
@@ -136,7 +139,7 @@ export class MapContainer extends Component {
       <div>
 
         
-        <Name name={this.state.name} a2017={this.state[2017]} a2018={this.state[2018]} a2019={this.state[2019]} a2020={this.state[2020]} a2021={this.state[2021]} />
+        <Name name={this.state.name} a2017={this.state[2017]} a2018={this.state[2018]} a2019={this.state[2019]} a2020={this.state[2020]} a2021={this.state[2021]} polyColour={this.state.polyColour}/>
         <Box sx={{ width: '100%', height: '3px' }} />
         <Map google={this.props.google}
           className={'map'}
@@ -158,7 +161,7 @@ export class MapContainer extends Component {
                   strokeWeight={2}
                   fillColor={this.state.colours[index]}
                   fillOpacity={0.35}
-                  onClick={() => this.setName(item.Name, item["2017"], item["2018"], item["2019"], item["2020"], item["2021"])}
+                  onClick={() => this.setName(item.Name, item["2017"], item["2018"], item["2019"], item["2020"], item["2021"], [this.state[2017], this.state[2018], this.state[2019], this.state[2020], this.state[2021]].map((y) => this.colour(y)))}
                   onMouseover = {() =>this.setState({hoverName: item.Name, isMouseTooltipVisible: true})}
                   onMouseout = {() => this.setState({hoverName: "", isMouseTooltipVisible: false})}
                   >

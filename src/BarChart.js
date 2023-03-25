@@ -1,4 +1,5 @@
 import React from 'react';
+import colorLib from '@kurkle/color';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -16,8 +17,13 @@ ChartJS.register(
   BarElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
 );
+
+export function transparentize(value, opacity) {
+    var alpha = opacity === undefined ? 0.5 : 1 - opacity;
+    return colorLib(value).alpha(alpha).rgbString();
+}
 
 export const options = {
   responsive: true,
@@ -35,9 +41,10 @@ export const options = {
 const labels = ['2017', '2018', '2019', '2020', '2021'];
 
 export function BarChart(props) {
-    props = props.props;
-    const vals = {'2017': props[0], '2018': props[1], '2019': props[2], '2020': props[3], '2021': props[4] };
-    console.log(props[0]);
+    const yearlyThefts = props.yearlyThefts;
+    const colour = props.colour;
+    //console.log(colour)
+    const vals = {'2017': yearlyThefts[0], '2018': yearlyThefts[1], '2019': yearlyThefts[2], '2020': yearlyThefts[3], '2021': yearlyThefts[4]}
     return <Bar options={options} data={
         {
             labels,
@@ -45,7 +52,7 @@ export function BarChart(props) {
             {
                 label: '# of Thefts',
                 data: labels.map((l) => vals[l]),
-                backgroundColor: 'rgba(19,93,216)',
+                backgroundColor: colour.map((c) => transparentize(c,0.5)),
             },
             ],
         }
