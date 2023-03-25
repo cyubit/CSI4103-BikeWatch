@@ -13,8 +13,8 @@ const tooltipStyle = {
   padding: "5px",
   opacity: 0.8
 }
-const Name = ({ name, a2017, a2018, a2019, a2020, a2021, polyColour }) => (
-  console.log(polyColour),
+const Name = ({ name, a2017, a2018, a2019, a2020, a2021, yearColour }) => (
+  console.log(yearColour),
 
   <div>
 
@@ -28,7 +28,7 @@ const Name = ({ name, a2017, a2018, a2019, a2020, a2021, polyColour }) => (
 
           <Grid item>
 
-            <BarChart yearlyThefts={[a2017,a2018,a2019,a2020,a2021]} colour={polyColour} />
+            <BarChart yearlyThefts={[a2017,a2018,a2019,a2020,a2021]} colour={yearColour} />
 
           </Grid>
 
@@ -87,7 +87,7 @@ export class MapContainer extends Component {
       2019: "",
       2020: "",
       2021: "",
-      polyColour: "",
+      yearColour: "",
       colours: []
     }
   }
@@ -98,7 +98,7 @@ export class MapContainer extends Component {
     this.setState({ 2019: a2019 });
     this.setState({ 2020: a2020 });
     this.setState({ 2021: a2021 });
-    this.setState({polyColour: pColour});
+    this.setState({yearColour: pColour});
   }
   default = () => {
     this.setState({ name: "Click on a district to see the bike theft statistics" });
@@ -139,7 +139,7 @@ export class MapContainer extends Component {
       <div>
 
         
-        <Name name={this.state.name} a2017={this.state[2017]} a2018={this.state[2018]} a2019={this.state[2019]} a2020={this.state[2020]} a2021={this.state[2021]} polyColour={this.state.polyColour}/>
+        <Name name={this.state.name} a2017={this.state[2017]} a2018={this.state[2018]} a2019={this.state[2019]} a2020={this.state[2020]} a2021={this.state[2021]} yearColour={this.state.yearColour}/>
         <Box sx={{ width: '100%', height: '3px' }} />
         <Map google={this.props.google}
           className={'map'}
