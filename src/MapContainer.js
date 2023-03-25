@@ -20,10 +20,10 @@ const Name = ({ name, a2017, a2018, a2019, a2020, a2021, yearColour }) => (
   <div>
 
     {name !== "Click on a district to see the bike theft statistics" ?
-      (<Paper elevation={3} style={{ padding: "5px" }} >
-        <Grid container spacing={1} style={{ justifyContent: 'center', color: "#124562" }}>
+      (
+        <Grid container spacing={1} style={{ justifyContent: 'center', color: "#f2efeb" }}>
           <Grid item xs={12} md={4}>
-            <h2>{name}</h2>
+            <h1>{name}</h1>
 
           </Grid>
 
@@ -63,11 +63,11 @@ const Name = ({ name, a2017, a2018, a2019, a2020, a2021, yearColour }) => (
         </Grid>
 
 
-      </Paper>) :
+      ) :
       // <Paper elevation={3} style={{ padding: "5px", borderRadius: '20px', backgroundColor: '#f2efeb' }}>
-      <Grid container spacing={1} style={{ justifyContent: 'center', color: "#124562" }}>
+      <Grid container spacing={1} style={{ justifyContent: 'center', color: "#f2efeb" }}>
         <Grid item xs={12} md={4}>
-          <h2>{name}</h2>
+          <h1>{name}</h1>
         </Grid>
       </Grid>
       // </Paper>

@@ -23,10 +23,10 @@ class App extends Component {
             </Box>
           </Grid> */}
           <Grid item xs={11} lg={11} style={{ position: 'relative', height: '80vh' }}>
-            <Box sx={{ flexGrow: 0, backgroundColor: '#f2efeb', borderRadius: '30px', padding: '20px' }}>
+            <Box sx={{ flexGrow: 0, backgroundColor: '#4a7d9a', borderRadius: '30px', padding: '20px' }}>
               <Grid container spacing={{ xs: 3 }} style={{ justifyContent: 'center' }}>
                 <Grid item xs={12} lg={12}>
-                  <MapContainer style={{ width: '95%' }} />
+                  <MapContainer style={{ width: '95%', marginLeft:'5px' }} />
                 </Grid>
                 <Grid item xs={12} lg={12}>
                   <Box sx={{ width: '100%', height: '80vh' }} />
