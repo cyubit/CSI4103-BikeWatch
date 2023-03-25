@@ -5,6 +5,8 @@ import MouseTooltip from 'react-sticky-mouse-tooltip';
 
 // import data from './master.json';
 import data from './master_unkeyed.json';
+
+import { BarChart } from './BarChart';
 const tooltipStyle = {
   color: "black",
   backgroundColor: "#f2efeb",
@@ -23,9 +25,15 @@ const Name = ({ name, a2017, a2018, a2019, a2020, a2021 }) => (
 
           </Grid>
 
+          <Grid item>
+
+            <BarChart props={[a2017,a2018,a2019,a2020,a2021]}/>
+
+          </Grid>
 
 
-          <Grid item xs={"auto"} >
+
+          {/* <Grid item xs={"auto"} >
 
             <h4><b>{a2017}</b> thefts in 2017 </h4>
 
@@ -49,7 +57,7 @@ const Name = ({ name, a2017, a2018, a2019, a2020, a2021 }) => (
 
           <h4><b>{a2021}</b> thefts in 2021 </h4>
 
-          </Grid>
+          </Grid> */}
         </Grid>
 
 
