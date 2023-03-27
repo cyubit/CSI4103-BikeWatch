@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, Polygon} from 'google-maps-react';
 import { Grid, Paper, Box } from '@mui/material';
 import MouseTooltip from 'react-sticky-mouse-tooltip';
-
+import legend from './legend.png'
 // import data from './master.json';
 import data from './master_unkeyed.json';
 
@@ -32,7 +32,9 @@ const Name = ({ name, a2017, a2018, a2019, a2020, a2021, yearColour }) => (
             <BarChart yearlyThefts={[a2017,a2018,a2019,a2020,a2021]} colour={yearColour} />
 
           </Grid>
-
+          <Grid >
+            <img src={legend} alt= "legend" width = "100" height = "150" hspace = "50"/>
+          </Grid>
 
 
           {/* <Grid item xs={"auto"} >
@@ -65,9 +67,12 @@ const Name = ({ name, a2017, a2018, a2019, a2020, a2021, yearColour }) => (
 
       ) :
       // <Paper elevation={3} style={{ padding: "5px", borderRadius: '20px', backgroundColor: '#f2efeb' }}>
-      <Grid container spacing={1} style={{ justifyContent: 'center', color: "#f2efeb" }}>
+      <Grid container spacing={1} style={{ justifyContent: 'center', color: "#f2efeb"}}>
         <Grid item xs={12} md={4}>
           <h1>{name}</h1>
+        </Grid>
+        <Grid >
+          <img src={legend} alt= "legend" width = "100" height = "150" hspace = "50"/>
         </Grid>
       </Grid>
       // </Paper>
@@ -114,11 +119,11 @@ export class MapContainer extends Component {
     if (sum > 500) {
       return ("#FF0000")
     } else if (sum > 400) {
-      return ("#FF6249")
+      return ("#ff5349")
     } else if (sum > 250) {
-      return ("#FF6249")
+      return ("#ffa500")
     } else if (sum > 100) {
-      return ("#FF9933")
+      return ("#FFAE42")
     } else if (sum > 50) {
       return ("#FFFF00")
     } else if (sum > 25) {
