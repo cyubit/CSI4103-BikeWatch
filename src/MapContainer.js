@@ -15,7 +15,7 @@ const tooltipStyle = {
 }
 
 const Name = ({ name, a2017, a2018, a2019, a2020, a2021, yearColour }) => (
-  console.log(yearColour),
+  //console.log(yearColour),
 
   <div>
 
@@ -103,7 +103,8 @@ export class MapContainer extends Component {
     this.setState({ 2018: a2018 });
     this.setState({ 2019: a2019 });
     this.setState({ 2020: a2020 });
-    this.setState({ 2021: a2021 });
+    this.setState({ 2021: a2021 }, () => {this.props.pname(this.state.name)});
+    
     
   }
   default = () => {
@@ -113,7 +114,7 @@ export class MapContainer extends Component {
     this.setState({ 2019: "" });
     this.setState({ 2020: "" });
     this.setState({ 2021: "" });
-    this.setState({yearColour: ""});
+    this.setState({yearColour: ""}, () => {this.props.pname(this.state.name)});
   }
   colour = (sum) => {
     if (sum > 500) {
@@ -189,7 +190,7 @@ export class MapContainer extends Component {
       </div>
     );
   }
-}
+};
 
 export default GoogleApiWrapper({
   apiKey: 'AIzaSyB4GCrFrx_ah_E1AQDeqIjIyWO2RAJvLjU'

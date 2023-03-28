@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 // Removed logo since we don't need it anymore
 import MapContainer from './MapContainer.js';
 import Header from './Header.js';
@@ -7,8 +7,19 @@ import Box from '@mui/material/Box';
 import './App.css';
 import DisqusBoard from './DisqusBoard.js';
 
+
 class App extends Component {
+  constructor(props) {
+    super();
+    this.state = { 
+      selected: ""
+    }
+  };
+
   render() {
+    const polyName = (s) => {
+      this.setState({selected: s}) 
+    }
     return (
       <div className='App'>
         <Grid container spacing={{ xs: 1, md: 3 }} style={{ justifyContent: 'center' }}>
@@ -26,7 +37,7 @@ class App extends Component {
             <Box sx={{ flexGrow: 0, backgroundColor: '#4a7d9a', borderRadius: '30px', padding: '20px' }}>
               <Grid container spacing={{ xs: 3 }} style={{ justifyContent: 'center' }}>
                 <Grid item xs={12} lg={12}>
-                  <MapContainer style={{ width: '95%', marginLeft:'5px' }} />
+                  <MapContainer style={{ width: '95%', marginLeft:'5px' }} pname={polyName}/>
                 </Grid>
                 <Grid item xs={12} lg={12}>
                   <Box sx={{ width: '100%', height: '80vh' }} />
@@ -38,7 +49,7 @@ class App extends Component {
 
 
             <Grid item xs={8} lg={11}>
-              <DisqusBoard />
+              <DisqusBoard url={this.state.selected}/>
             </Grid>
           </Grid>
         </Grid>
