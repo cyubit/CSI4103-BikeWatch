@@ -21,10 +21,10 @@ class App extends Component {
       this.setState({selected: s}) 
     }
     return (
-      <div className='App'>
+      <div className='App' TestId="app-component" data-testid="app-component">
         <Grid container spacing={{ xs: 1, md: 3 }} style={{ justifyContent: 'center' }}>
           <Grid item xs={12}>
-            <Header />
+            <Header TestId="header-component"/>
           </Grid>
           {/*Change to xs={12} to lg={8} when we implement the posts component */}
 
@@ -37,7 +37,7 @@ class App extends Component {
             <Box sx={{ flexGrow: 0, backgroundColor: '#4a7d9a', borderRadius: '30px', padding: '1%' }}>
               <Grid container spacing={{ xs: 3 }} style={{ justifyContent: 'center' }}>
                 <Grid item xs={12} lg={12}>
-                  <MapContainer style={{ width: '95%' }} pname={polyName}/>
+                  <MapContainer style={{ width: '95%' }} pname={polyName} TestId="map-container-component"/>
                 </Grid>
                 <Grid item xs={12} lg={12}>
                   <Box sx={{ width: '100%', height: '80vh'}} />
@@ -49,7 +49,7 @@ class App extends Component {
 
 
             <Grid item xs={8} lg={11}>
-              <DisqusBoard url={this.state.selected}/>
+              <DisqusBoard url={this.state.selected} TestId="disqus-board-component"/>
             </Grid>
           </Grid>
         </Grid>

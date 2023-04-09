@@ -24,13 +24,13 @@ const Header = () => {
     const handleClose = () => setOpen(false);
 
     return (
-        <div className='Header'>
+        <div className='Header' data-testid='header-component'>
             <Grid container spacing={2} justifyContent='space-evenly' alignItems="center" style={{ marginLeft: '1%', paddingTop:'10px' }} >
                 <Grid item xs={6}>
                 <img src={logo} alt="BikeWatch Logo" style={{ width: "100px"}} onClick={handleOpen} />
                 </Grid>
                 <Grid item xs={1}>
-                    <img src={helpIcon} alt="Help" style={{ width: "50px", cursor:'pointer' }} onClick={handleOpen} />
+                    <img src={helpIcon} alt="Help" style={{ width: "50px", cursor:'pointer' }} onClick={handleOpen}/>
                 </Grid>
             </Grid>
             <Modal open={open} onClose={handleClose}>
