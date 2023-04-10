@@ -8,7 +8,7 @@ import './App.css';
 import DisqusBoard from './DisqusBoard.js';
 
 
-class App extends Component {
+class App extends Component { // Renders the app. The code here was written pretty much entirely by our team.
   constructor(props) {
     super();
     this.state = { 
@@ -24,20 +24,14 @@ class App extends Component {
       <div className='App' TestId="app-component" data-testid="app-component">
         <Grid container spacing={{ xs: 1, md: 3 }} style={{ justifyContent: 'center' }}>
           <Grid item xs={12}>
-            <Header TestId="header-component"/>
+            <Header TestId="header-component"/> {/* Header component */}
           </Grid>
-          {/*Change to xs={12} to lg={8} when we implement the posts component */}
-
-          {/* <Grid item xs={11} lg={10} style={{ position: 'sticky', height: '90vh' }}>
-            <Box sx={{ flexGrow: 1, backgroundColor: '##f2efeb' }}>
-              <MapContainer />
-            </Box>
-          </Grid> */}
+          
           <Grid item xs={11} lg={11} style={{ position: 'relative', height: '80vh' }}>
-            <Box sx={{ flexGrow: 0, backgroundColor: '#4a7d9a', borderRadius: '30px', padding: '1%' }}>
+            <Box sx={{ flexGrow: 0, backgroundColor: '#4a7d9a', borderRadius: '30px', padding: '1%' }}> {/* A border around the map */}
               <Grid container spacing={{ xs: 3 }} style={{ justifyContent: 'center' }}>
                 <Grid item xs={12} lg={12}>
-                  <MapContainer style={{ width: '95%' }} pname={polyName} TestId="map-container-component"/>
+                  <MapContainer style={{ width: '95%' }} pname={polyName} TestId="map-container-component"/> {/* Map component */}
                 </Grid>
                 <Grid item xs={12} lg={12}>
                   <Box sx={{ width: '100%', height: '80vh'}} />

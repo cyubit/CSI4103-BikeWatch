@@ -6,7 +6,7 @@ import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 
 
-const style = {
+const style = { // This is the styling for the modal, taken from the Material UI documentation. Everything else in this file was written by our Team
     position: 'absolute',
     top: '50%',
     left: '50%',
@@ -25,7 +25,7 @@ const Header = () => {
 
     return (
         <div className='Header' data-testid='header-component'>
-            <Grid container spacing={2} justifyContent='space-evenly' alignItems="center" style={{ marginLeft: '1%', paddingTop:'10px' }} >
+            <Grid container spacing={2} justifyContent='space-evenly' alignItems="center" style={{ marginLeft: '1%', paddingTop:'10px' }} > {/* This is the header, written by Adam. The grid ensures the header remains scalable*/}
                 <Grid item xs={6}>
                 <img src={logo} alt="BikeWatch Logo" style={{ width: "100px"}} onClick={handleOpen} />
                 </Grid>
@@ -33,7 +33,7 @@ const Header = () => {
                     <img src={helpIcon} alt="Help" style={{ width: "50px", cursor:'pointer' }} onClick={handleOpen}/>
                 </Grid>
             </Grid>
-            <Modal open={open} onClose={handleClose}>
+            <Modal open={open} onClose={handleClose}> {/* This is the modal that pops up when the user clicks on the help icon written by Adam*/}
                 <Box sx={style}>
                     <p>- Bike Watch allows users to  <b>view the locations and amounts of bike thefts</b> in the Ottawa Area.</p>
                     <p>- Each area on the map covers a neighbourhood as designated by ONS Ottawa. </p>
