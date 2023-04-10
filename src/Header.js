@@ -32,8 +32,8 @@ const Header = () => {
                 <Grid item xs={1}>
                     <img src={helpIcon} alt="Help" style={{ width: "50px", cursor:'pointer' }} onClick={handleOpen}/>
                 </Grid>
-            </Grid>
-            <Modal open={open} onClose={handleClose}> {/* This is the modal that pops up when the user clicks on the help icon written by Adam*/}
+            </Grid>{/* This is the modal that pops up when the user clicks on the help icon written by Adam*/}
+            <Modal open={open} onClose={handleClose}> 
                 <Box sx={style}>
                     <p>- Bike Watch allows users to  <b>view the locations and amounts of bike thefts</b> in the Ottawa Area.</p>
                     <p>- Each area on the map covers a neighbourhood as designated by ONS Ottawa. </p>
