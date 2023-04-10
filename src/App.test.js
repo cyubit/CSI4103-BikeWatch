@@ -32,3 +32,13 @@ test('Help Icon Opens Modal', () => {
   });
   expect(setOpen).toBeCalled();
 });
+
+test('Correct color is being rendered', () => {
+  expect(MapContainer.colour(500)).toBe("#FF0000");
+  expect(MapContainer.colour(400)).toBe("#ff5349");
+  expect(MapContainer.colour(250)).toBe("#ffa500");
+  expect(MapContainer.colour(100)).toBe("#FFAE42");
+  expect(MapContainer.colour(50)).toBe("#FFFF00");
+  expect(MapContainer.colour(25)).toBe("#ADFF2F");
+  expect(MapContainer.colour(0)).toBe("#00FF00");
+});
