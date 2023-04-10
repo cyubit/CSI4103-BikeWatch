@@ -44,7 +44,7 @@ const Name = ({ name, a2017, a2018, a2019, a2020, a2021, yearColour }) => ( // T
 
       <Grid container spacing={1} style={{ justifyContent: 'center', color: "#f2efeb" }}>
         <Grid item xs={12} md={6}>
-          <h1>{name}</h1>S
+          <h1>{name}</h1>
         </Grid>
         <Grid >
           <img src={legend} alt="legend" width="100" height="150" hspace="" />
