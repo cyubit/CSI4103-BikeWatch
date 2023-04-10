@@ -1,3 +1,4 @@
+//about 30# of this code is written by me, the rest is from the Disqus documentation
 import React, { Component } from "react"
 import Disqus from "disqus-react"
 

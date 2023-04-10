@@ -1,3 +1,4 @@
+//About 30% of this code is written by me, the rest is from the react-chartjs-2 documentation
 import React from 'react';
 import colorLib from '@kurkle/color';
 import {
