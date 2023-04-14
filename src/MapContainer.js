@@ -5,8 +5,8 @@ import MouseTooltip from 'react-sticky-mouse-tooltip';
 import legend from './legend.png'
 // import data from './master.json';
 import data from './master_unkeyed.json';
-
 import { BarChart } from './BarChart';
+
 const tooltipStyle = {
   color: "black",
   backgroundColor: "#f2efeb",
@@ -168,5 +168,5 @@ export class MapContainer extends Component { // The code here was written by ou
 };
 
 export default GoogleApiWrapper({
-  apiKey: 'AIzaSyB4GCrFrx_ah_E1AQDeqIjIyWO2RAJvLjU'
+  apiKey: process.env.REACT_APP_MAPS_API_KEY
 })(MapContainer);
