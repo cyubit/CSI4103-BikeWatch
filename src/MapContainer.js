@@ -15,7 +15,7 @@ const tooltipStyle = {
 }
 
 const Name = ({ name, a2017, a2018, a2019, a2020, a2021, yearColour }) => ( // The code here was written by our team. With help from the google-maps-react documentation, and the react-sticky-mouse-tooltip documentation.
-  //console.log(yearColour),
+
 
   <div>
 
